@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to Firebase Hosting</title>
+  <title>Amberleaf Inventory - Login</title>
 
   <!-- update the version number as needed -->
   <script defer src="/__/firebase/7.5.0/firebase-app.js"></script>
@@ -93,6 +93,9 @@
     function foo() {
       document.location.href = "./landingPage.html";
     }
+    function testVariable() {
+      document.location.href = "./testVariable.html";
+    }
     function googleLogin() {
       //create instance of google provider object
       var provider = new firebase.auth.GoogleAuthProvider();
@@ -121,5 +124,7 @@
 <body>
   <button id="test_butt" onclick="foo()">Click to test me</button><br>
   <button onclick="googleLogin()">Sign in with google!</button>
+  <button id="test_variables" onclick="testVariable()">Click here to test variables</button>
 </body>
+
 </html>
