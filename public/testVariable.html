@@ -14,17 +14,17 @@
             writeUserData(fname, lname);
         }
         function writeUserData(fname, lname) {
-            // alert("yes2");
+
+            //var firebase = require('firebase');
             //create reference to database service
-            var database = firebase.database();
-            if (typeof variable !== 'undefined') {
-            // the variable is defined
-                alert("database exists");
-            }
-            else
-                alert("database DOES NOT EXIST");
+            alert(typeof admin);
+            var database = firebase.database().ref("projectData/server");
+            alert("yes2");
+
+            var usersRef = database.child("server");
+
             alert("yes3");
-            database.set({
+            usersRef.set({
                 alanisawesome: {
                     date_of_birth: "June 23, 1912",
                     full_name: "Alan Turing"
@@ -38,6 +38,25 @@
 
 
             // alert("done");
+        }
+        function retrieveDatabase() {
+            var admin = require("firebase-admin");
+            alert(typeof admin);
+            //var x = document.getElementById('dataText').value;
+            //document.getElementById("dataText").innerHTML = "hello, world";
+            var db = admin.database();
+            alert("yes11");
+            var ref = db.ref("projectData/server");
+            alert("yes22");
+            ref.on("value",function(snapshot){
+                document.getElementById("dataText").innerHTML = "yes";
+            }, function (errorObject) {
+                document.getElementById("dataText").innerHTML = "error";
+            });
+        }
+        
+        function clearTextBox() {
+            document.getElementById("dataText").innerHTML = "";
         }
     </script>
 </head>
@@ -70,6 +89,14 @@
         <button type="submit" value="submit">Submit</button>
     </form>
 
+
+    <div id="myDatabase">
+        <button onclick="retrieveDatabase()">Retrieve Database</button>
+        <button onclick="clearTextBox()">Clear Text</button>
+        <div id="container">
+            <p id="dataText"></p>
+        </div>
+    </div>
 </body>
 
 </html>
