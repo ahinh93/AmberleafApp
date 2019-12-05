@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amberleaf Inventory - Testing Variable Read/Write</title>
+    <title>Testing Variable Read/Write</title>
+    <script>
+        function saveData() {
+            var fname = document.getElementById('first-name').value;
+            var lname = document.getElementById('last-name').value;
+            //alert("First name: " + fname + "\nLast Name: " + lname);
+            // alert("yes");
+            writeUserData(fname, lname);
+        }
+        function writeUserData(fname, lname) {
+            // alert("yes2");
+            //create reference to database service
+            var database = firebase.database();
+            if (typeof variable !== 'undefined') {
+            // the variable is defined
+                alert("database exists");
+            }
+            else
+                alert("database DOES NOT EXIST");
+            alert("yes3");
+            database.set({
+                alanisawesome: {
+                    date_of_birth: "June 23, 1912",
+                    full_name: "Alan Turing"
+                },
+                gracehop: {
+                    date_of_birth: "December 9, 1906",
+                    full_name: "Grace Hopper"
+                }
+            });
+            alert("yes4");
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.5.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.5.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.5.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.5.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.5.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+
+            // alert("done");
+        }
+    </script>
 </head>
+
 <body>
-    <form>
-        <button></button>
+    <!--Import desired Firebase Javascript SDK's-->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD47NOjIbQYeNZtwbIEqTNfRZSDmAp1E14",
+            authDomain: "amberleaf-app.firebaseapp.com",
+            databaseURL: "https://amberleaf-app.firebaseio.com",
+            projectId: "amberleaf-app",
+            storageBucket: "amberleaf-app.appspot.com",
+            messagingSenderId: "522203017902",
+            appId: "1:522203017902:web:1b9fab7ae49d0670d0b33f",
+            measurementId: "G-HYLXXYF545"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <form id="myForm" onsubmit="saveData()">
+        <h2>First Name</h2>
+        <input type="text" id="first-name" name="fname" required><br>
+        <h2>Last Name</h2>
+        <input type="text" id="last-name" name="lname" required><br>
+        <button type="submit" value="submit">Submit</button>
     </form>
+
 </body>
 
 </html>
