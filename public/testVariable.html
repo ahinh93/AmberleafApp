@@ -5,81 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Testing Variable Read/Write</title>
-    <script>
-        function saveData() {
-            var fname = document.getElementById('first-name').value;
-            var lname = document.getElementById('last-name').value;
-            //alert("First name: " + fname + "\nLast Name: " + lname);
-            // alert("yes");
-            writeUserData(fname, lname);
-        }
-        function writeUserData(fname, lname) {
 
-            //var firebase = require('firebase');
-            //create reference to database service
-            alert(typeof admin);
-            var database = firebase.database().ref("projectData/server");
-            alert("yes2");
-
-            var usersRef = database.child("server");
-
-            alert("yes3");
-            usersRef.set({
-                alanisawesome: {
-                    date_of_birth: "June 23, 1912",
-                    full_name: "Alan Turing"
-                },
-                gracehop: {
-                    date_of_birth: "December 9, 1906",
-                    full_name: "Grace Hopper"
-                }
-            });
-            alert("yes4");
-
-
-            // alert("done");
-        }
-        function retrieveDatabase() {
-            var admin = require("firebase-admin");
-            alert(typeof admin);
-            //var x = document.getElementById('dataText').value;
-            //document.getElementById("dataText").innerHTML = "hello, world";
-            var db = admin.database();
-            alert("yes11");
-            var ref = db.ref("projectData/server");
-            alert("yes22");
-            ref.on("value",function(snapshot){
-                document.getElementById("dataText").innerHTML = "yes";
-            }, function (errorObject) {
-                document.getElementById("dataText").innerHTML = "error";
-            });
-        }
-        
-        function clearTextBox() {
-            document.getElementById("dataText").innerHTML = "";
-        }
-    </script>
 </head>
 
 <body>
     <!--Import desired Firebase Javascript SDK's-->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyD47NOjIbQYeNZtwbIEqTNfRZSDmAp1E14",
-            authDomain: "amberleaf-app.firebaseapp.com",
-            databaseURL: "https://amberleaf-app.firebaseio.com",
-            projectId: "amberleaf-app",
-            storageBucket: "amberleaf-app.appspot.com",
-            messagingSenderId: "522203017902",
-            appId: "1:522203017902:web:1b9fab7ae49d0670d0b33f",
-            measurementId: "G-HYLXXYF545"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+    <script src="amberleaf-scripts.js"></script>
+
 
     <form id="myForm" onsubmit="saveData()">
         <h2>First Name</h2>
