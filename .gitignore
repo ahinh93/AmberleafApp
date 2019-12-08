@@ -64,3 +64,5 @@ node_modules/
 # dotenv environment variables file
 *.env
 
+#ignore private key json file
+amberleaf-app-firebase-adminsdk-ag21e-0a5517295a.json
