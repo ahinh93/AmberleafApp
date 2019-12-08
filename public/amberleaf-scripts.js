@@ -17,9 +17,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-var admin = require('firebase-admin');
-
-
 function saveData() {
     var fname = document.getElementById('first-name').value;
     var lname = document.getElementById('last-name').value;
