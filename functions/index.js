@@ -1,17 +1,11 @@
-const functions = require('firebase-functions');
-
-admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-    databaseURL: 'https://amberleaf-app.firebaseio.com'
-  });
+var admin = require('firebase-admin');
+var functions = require('firebase-functions');
 
 // Initialize the default app
-var admin = require('firebase-admin');
-var app = admin.initializeApp();
+var defaultApp = admin.initializeApp(functions.config().firebase);
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+console.log(defaultApp.name);  // '[DEFAULT]'
+
+// Retrieve services via the defaultApp variable...
+var defaultAuth = defaultApp.auth();
+var db = admin.firestore();
