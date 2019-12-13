@@ -2,28 +2,97 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta author="Andrew Hinh">
   <title>Amberleaf Inventory - Login</title>
-  <!-- <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script> -->
+  <!-- Include Firebase libraries> -->
   <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/nprogress.css">
+  <link rel="stylesheet" href="css/custom.min.css">
 </head>
 
-<body>
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Amberleaf App</span></a>
+          </div>
 
+          <div class="clearfix"></div>
+          <br />
 
-  <pre id="preObject"></pre>
-  <!-- <script src="amberleaf-scripts.js"></script> -->
-  <script src="/js/init-firebase.js"></script>
-  <script src="/js/amberleaf-scripts.js"></script>
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="index2.html">Dashboard2</a></li>
+                    <li><a href="index3.html">Dashboard3</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="form.html">General Form</a></li>
+                    <li><a href="form_advanced.html">Advanced Components</a></li>
+                    <li><a href="form_validation.html">Form Validation</a></li>
+                    <li><a href="form_wizards.html">Form Wizard</a></li>
+                    <li><a href="form_upload.html">Form Upload</a></li>
+                    <li><a href="form_buttons.html">Form Buttons</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="general_elements.html">General Elements</a></li>
+                    <li><a href="media_gallery.html">Media Gallery</a></li>
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="icons.html">Icons</a></li>
+                    <li><a href="glyphicons.html">Glyphicons</a></li>
+                    <li><a href="widgets.html">Widgets</a></li>
+                    <li><a href="invoice.html">Invoice</a></li>
+                    <li><a href="inbox.html">Inbox</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /sidebar menu -->
 
-  <input type="text" id="myInput"></input>
-  <button id="test_variables" onclick="writeToDatabase()">Write to DB</button>
-  <!-- <button id="test_variables" onclick="listenToDatabase()">Check DB</button> -->
-  
+          <pre id="preObject"></pre>
+          <!-- <script src="amberleaf-scripts.js"></script> -->
+          <script src="/js/init-firebase.js"></script>
+          <script src="/js/amberleaf-scripts.js"></script>
+
+          <input type="text" id="myInput"></input>
+          <button id="test_variables" onclick="writeToDatabase()">Write to DB</button>
+          <!-- <button id="test_variables" onclick="listenToDatabase()">Check DB</button> -->
+
+          <!-- jQuery -->
+          <script type="text/javascript" src="js/jquery.min.js"></script>
+          <!-- Bootstrap -->
+          <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+          <!-- FastClick -->
+          <script type="text/javascript" src="js/fastclick.js"></script>
+          <!-- NProgress -->
+          <script type="text/javascript" src="js/nprogress.js"></script>
+          <!-- Custom Theme Scripts -->
+          <script src="js/custom.min.js"></script>
+        </div>
+      </div>
+      <!-- /menu footer buttons -->
+    </div>
+  </div>
 </body>
 
 </html>
