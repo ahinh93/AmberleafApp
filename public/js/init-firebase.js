@@ -1,6 +1,3 @@
-
-// Set the configuration for your app
-// TODO: Replace with your project's config object
 var firebaseConfig = {
   apiKey: "AIzaSyD47NOjIbQYeNZtwbIEqTNfRZSDmAp1E14",
   authDomain: "amberleaf-app.firebaseapp.com",

@@ -5,8 +5,9 @@
 function writeToDatabase() {
 
     if (typeof database !== 'undefined') {
-        database.ref('object/').set(document.getElementById('myInput'));
-
+        var temp = document.getElementById('myInput').value;
+        database.ref('object/').set(temp);
+        console.log("object/"+temp);
     }
     else
         console.log("database undefined");
